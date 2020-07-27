@@ -1,5 +1,6 @@
-# robofriends
-Tutorial for udemy course - React + Redux
+# robofriends PWA
+
+An improvement upon the Robofriends Redux app, now a PWA with 100% Lighthouse ratings!
 
 To run the project:
 
