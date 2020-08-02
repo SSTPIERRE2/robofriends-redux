@@ -6,16 +6,9 @@ import ErrorBoundry from '../ErrorBoundry';
 import './mainPage.css';
 import Header from '../Header';
 import { Robot } from '../../types';
+import { AppProps } from '../../containers/App';
 
-interface Props {
-    onRequestRobots: () => void;
-    robots: Robot[];
-    searchField: string;
-    onSearchChange: () => void;
-    isPending: boolean;
-}
-
-class MainPage extends Component<Props> {
+class MainPage extends Component<AppProps> {
     componentDidMount(): void {
         this.props.onRequestRobots();
     }

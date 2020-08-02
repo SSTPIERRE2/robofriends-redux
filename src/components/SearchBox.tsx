@@ -1,7 +1,10 @@
 import React from 'react';
+import { ChangeSearchFieldAction } from '../constants';
 
 interface Props {
-    searchChange: () => void;
+    searchChange: (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => ChangeSearchFieldAction;
 }
 
 const SearchBox = ({ searchChange }: Props) => {
