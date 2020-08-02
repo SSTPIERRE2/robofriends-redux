@@ -5,20 +5,29 @@ import Scroll from '../Scroll';
 import ErrorBoundry from '../ErrorBoundry';
 import './mainPage.css';
 import Header from '../Header';
+import { Robot } from '../../types';
 
-class MainPage extends Component {
-    componentDidMount() {
+interface Props {
+    onRequestRobots: () => void;
+    robots: Robot[];
+    searchField: string;
+    onSearchChange: () => void;
+    isPending: boolean;
+}
+
+class MainPage extends Component<Props> {
+    componentDidMount(): void {
         this.props.onRequestRobots();
     }
 
-    filterRobots = () =>
+    filterRobots = (): Robot[] =>
         this.props.robots.filter((robot) => {
             return robot.name
                 .toLowerCase()
                 .includes(this.props.searchField.toLowerCase());
         });
 
-    render() {
+    render(): JSX.Element {
         const { onSearchChange, isPending } = this.props;
 
         return (

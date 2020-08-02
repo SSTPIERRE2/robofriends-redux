@@ -1,6 +1,10 @@
 import React from 'react';
 
-const SearchBox = ({ searchfield, searchChange }) => {
+interface Props {
+    searchChange: () => void;
+}
+
+const SearchBox = ({ searchChange }: Props) => {
     return (
         <div className="pa2">
             <input

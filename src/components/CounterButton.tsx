@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 
-class CounterButton extends Component {
-    constructor(props) {
+interface State {
+    count: number;
+}
+
+class CounterButton extends Component<Record<string, unknown>, State> {
+    constructor(props: null) {
         super(props);
         this.state = { count: 1 };
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
+    shouldComponentUpdate(nextProps: null, nextState: State) {
         if (this.state.count !== nextState.count) {
             return true;
         }
