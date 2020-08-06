@@ -1,6 +1,10 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 
-const Scroll: FunctionComponent = (props) => {
+type Props = {
+    children?: JSX.Element;
+};
+
+const Scroll: React.FC<Props> = (props) => {
     return (
         <div
             style={{

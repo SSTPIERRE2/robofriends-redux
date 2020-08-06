@@ -19,7 +19,7 @@ export interface SearchRobots {
     searchField: string;
 }
 
-const initialStateSearch: SearchRobots = {
+export const initialStateSearch: SearchRobots = {
     searchField: '',
 };
 

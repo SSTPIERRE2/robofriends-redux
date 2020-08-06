@@ -26,8 +26,8 @@ const mapStateToProps = (state: AppState) => {
 // the function returns an object then uses connect to change the data from redecers.
 const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, AnyAction>) => {
     return {
-        onSearchChange: (event: React.ChangeEvent<HTMLInputElement>) =>
-            dispatch(setSearchField(event.target.value)),
+        onSearchChange: (event: React.SyntheticEvent<HTMLInputElement>) =>
+            dispatch(setSearchField(event.currentTarget.value)),
         onRequestRobots: () => dispatch(requestRobots(apiCall)),
     };
 };
@@ -37,7 +37,7 @@ export interface AppProps {
     robots: Robot[];
     isPending: boolean;
     onSearchChange: (
-        event: React.ChangeEvent<HTMLInputElement>
+        event: React.SyntheticEvent<HTMLInputElement>
     ) => ChangeSearchFieldAction;
     onRequestRobots: () => Promise<
         RequestRobotsSuccessAction | RequestRobotsFailedAction

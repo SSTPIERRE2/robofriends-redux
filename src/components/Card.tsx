@@ -1,7 +1,7 @@
 import React from 'react';
 import { Robot } from '../types';
 
-const Card = ({ name, email, id }: Robot): JSX.Element => {
+const Card: React.SFC<Robot> = ({ name, email, id }) => {
     return (
         <div className="tc grow bg-light-green br3 pa3 ma2 dib bw2 shadow-5">
             <img alt="robots" src={`https://robohash.org/${id}?size=200x200`} />

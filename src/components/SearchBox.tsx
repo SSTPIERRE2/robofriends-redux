@@ -3,11 +3,11 @@ import { ChangeSearchFieldAction } from '../constants';
 
 interface Props {
     searchChange: (
-        event: React.ChangeEvent<HTMLInputElement>
+        event: React.SyntheticEvent<HTMLInputElement>
     ) => ChangeSearchFieldAction;
 }
 
-const SearchBox = ({ searchChange }: Props) => {
+const SearchBox: React.FC<Props> = ({ searchChange }) => {
     return (
         <div className="pa2">
             <input
