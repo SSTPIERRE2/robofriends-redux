@@ -8,7 +8,7 @@ jobs:
         steps:
             - checkout
             - run: npm install
-            - run: tsc
+            - run: npm tsc -p tsconfig.json
             - run: CI=true npm run build
 workflows:
     node-tests:
