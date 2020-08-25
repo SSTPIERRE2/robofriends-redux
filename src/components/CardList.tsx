@@ -3,7 +3,7 @@ import Card from './Card';
 import { Robot } from '../types';
 
 interface Props {
-    robots: Robott[];
+    robots: Robot[];
 }
 
 const CardList = ({ robots = [] }: Props): JSX.Element => {
