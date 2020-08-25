@@ -4,17 +4,19 @@ orbs:
 jobs:
     build:
         docker:
-            - image: alpine:3.7
+            - image: circleci/node:8.9
         steps:
             - checkout
+            - node/install-packages
             - run: npm install
             - run: npm tsc -p tsconfig.json
             - run: CI=true npm run build
     test:
         docker:
-            - image: alpine:3.7
+            - image: circleci/node:8.9
         steps:
             - checkout
+            - node/install-packages
             - run: npm install
             - run: npm test
 workflows:
